@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th= "http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css"
+      integrity="sha384-Bo21yfmmZuXwcN/9vKrA5jPUMhr7znVBBeLxT9MA4r2BchhusfJ6+n8TLGUcRAtL" crossorigin="anonymous">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jokes for you!</title>
+</head>
+<body>
+<div class="jumbotron container text-center col-lg-6 col-lg-offset-4">
+
+    <div>
+        <h3 th:text="${joke.setUp}"></h3>
+        <h5 th:text="${joke.punchline}"></h5>
+    </div>
+<br>
+    <p>[Refresh for new joke]</p>
+
+</div>
+</body>
+</html>

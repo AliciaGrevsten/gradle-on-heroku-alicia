@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css"
+      integrity="sha384-Bo21yfmmZuXwcN/9vKrA5jPUMhr7znVBBeLxT9MA4r2BchhusfJ6+n8TLGUcRAtL" crossorigin="anonymous">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+</head>
+<body>
+<div class="jumbotron container text-center col-lg-4 col-lg-offset-6">
+
+    <h1>Welcome</h1>
+    <br>
+    <h5>Generate a random joke right now or register for daily random jokes newsletter!</h5>
+    <br>
+
+    <div>
+        <div class="row float-left">
+            <form action="/showjoke" method="get">
+                <button type="submit" class="btn btn-info btn-lg" id="joke">New Joke</button>
+            </form>
+        </div>
+        <div class="row float-right">
+            <form action="/registered" method="get" onsubmit="return checkUserInput()" class="form-inline">
+                <input class="form-control" type="email" id="email" name="email" placeholder="Ex: example@gmail.com">
+                <button type="submit" class="btn btn-info btn-lg" id="register">Register</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+
+<script>
+    function checkUserInput() {
+        var email = document.getElementById("email").value;
+        var mailformat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+
+        if (email.length === 0) {
+            alert("You have to write something..");
+            return false;
+        }
+        if (!(email.match(mailformat))) {
+            alert("Mail is not a valid format.");
+            return false;
+        }
+        submitOK = true;
+    }
+</script>
