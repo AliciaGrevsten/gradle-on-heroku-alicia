@@ -12,7 +12,7 @@ import java.util.Random;
 @Controller
 public class JokeController {
 
-    @GetMapping("/")
+    @GetMapping("/index")
     public String index() {
         return "/index";
     }
@@ -25,12 +25,12 @@ public class JokeController {
         int ranIndex = ran.nextInt(jokes.size());
         Joke joke = jokes.get(ranIndex);
         model.addAttribute("joke", joke);
-        return "/joke";
+        return "joke";
     }
 
     @GetMapping("/registered")
     public String registered(@RequestParam(value = "email") String email, Model model) {
         model.addAttribute(email);
-        return "/registered";
+        return "registered";
     }
 }
