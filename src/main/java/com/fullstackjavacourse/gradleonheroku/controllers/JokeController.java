@@ -12,7 +12,7 @@ import java.util.Random;
 @Controller
 public class JokeController {
 
-    @GetMapping("/index")
+    @GetMapping("/")
     public String index() {
         return "/index";
     }
